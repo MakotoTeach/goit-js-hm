@@ -1,13 +1,44 @@
-'use strict';
+"use strict";
 
-let numbers = [1, 8, 2, 1, 2];
+let input = Number(prompt("Введте число!"));
 
-let total = 0;
+console.log(typeof input);
 
-for( let i = 0; i < numbers.length; i+=1) {
+// console.log(typeof input);
 
-    total += numbers[i];
-    
-}
+// do {
+//     input = prompt('Введте число!');
+//     console.log(input)
+// }
+// while (isNaN(input) || input !== null);
 
-console.log(total);
+
+
+
+//===========================
+// let numbers = [1, 8, 2, 1, 2,];
+
+// let total = 0;
+
+// for( let i = 0; i < numbers.length; i+=1) {
+
+//     total += numbers[i];
+
+// }
+
+// console.log(total);
+
+
+//=================================
+// let input;
+
+// let total = 0;
+
+// while (isNaN(input) || input !== null) {
+//   input = prompt("Введите число");
+
+//   if (!input) break;
+//   total += input;
+// }
+
+// alert(`Ваше число ${total}`);
