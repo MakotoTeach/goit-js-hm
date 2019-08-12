@@ -88,11 +88,3 @@ const account = {
   }
 };
 
-account.deposit(150);
-
-
-account.withdraw(120);
-
-account.deposit(200);
-
-console.table(account.transactions);

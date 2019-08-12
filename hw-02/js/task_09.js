@@ -33,12 +33,12 @@ const user = {
       amount: amount
     };
 
-    if(amount <= this.balance) {
-        this.addOperation(operation);
-        return (this.balance -= amount);
-    }
-    else{
-        console.log('МАЛО ДЕНЕГ!!!')
+    if (amount <= this.balance) {
+      this.addOperation(operation);
+      console.log(`Вы взяли ${amount} средств`);
+      return (this.balance -= amount);
+    } else {
+      console.log("Недостаточно средств на Вашем счету!!!");
     }
   },
 
@@ -51,15 +51,13 @@ const user = {
    */
   put(amount) {
     const operation = {
-        id: idCounter++,
-        type: Operation.PUT,
-        amount: amount,
+      id: idCounter++,
+      type: Operation.PUT,
+      amount: amount
     };
     this.addOperation(operation);
-    return (this.balance += amount)
-
-
-   
+    console.log(`Вы внесли ${amount} средств`);
+    return (this.balance += amount);
   },
 
   /*
@@ -74,41 +72,47 @@ const user = {
    * Метод возвращает текущий баланс
    */
   getBalance() {
-      return this.balance;
+    return this.balance;
   },
 
   /*
    * Метод ищет и возвращает объект транзации по id
    */
   getOperationDetails(id) {
-for ( let currentOperation of this.operations){
-    if (id === currentOperation.id){
+    for (let currentOperation of this.operations) {
+      if (id === currentOperation.id) {
         return currentOperation;
+      }
     }
-    else {
-        console.log('НЕТ ТАКОЙ ОПЕРАЦИИ!!')
-    }
-}
-
   },
 
   /*
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
-  getOperationTotal(type) {}
+  getOperationTotal(type) {
+    let totalAmount = 0;
+    for(const obj of this.operations){
+      if( type === obj.type){
+        totalAmount += obj.amount;
+      }
+    }
+    return totalAmount;
+  }
 };
 
-
-console.table(user)
+console.table(user);
 
 user.put(2500);
 
 user.take(900);
 
+console.table(user);
+
+user.put(4500);
+
 console.log(user.operations);
 
-console.log(user.getOperationDetails(1))
+console.log(user.getOperationDetails(2));
 
-
-
+console.log(user.getOperationTotal('put'));
