@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 // Напиши класс Storage, который будет создавать объекты для управления складом товаров.
-//  При вызове будет получать один аргумент - начальный массив товаров, 
+//  При вызове будет получать один аргумент - начальный массив товаров,
 //  и записывать его в свойство items.
 
 // Добавь методы класса:
@@ -11,44 +11,40 @@
 // removeItem(item) - получет товар и, если он есть, удаляет его из текущих
 
 const Storage = function(items) {
-    this.items = items;
-}
+  this.items = items;
+};
 
-Storage.prototype.getItems = function () {
-    return this.items;
-}
+Storage.prototype.getItems = function() {
+  return this.items;
+};
 
 Storage.prototype.addItem = function(item) {
-    return this.items.push(item);
-}
+  return this.items.push(item);
+};
 
-Storage.prototype.removeItem = function (item){
+Storage.prototype.removeItem = function(item) {
+  const inxToDel = this.items.indexOf(item);
 
-   const inxToDel = this.items.indexOf(item);
+  console.log(inxToDel);
 
-
-
-    console.log(inxToDel);
-
-
-    return this.items.splice(inxToDel, 1);
-}
+  return this.items.splice(inxToDel, 1);
+};
 
 const storage = new Storage([
-  'Нанитоиды',
-  'Пролонгер',
-  'Железные жупи',
-  'Антигравитатор',
+  "Нанитоиды",
+  "Пролонгер",
+  "Железные жупи",
+  "Антигравитатор"
 ]);
 
 const items = storage.getItems();
 console.log(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
 
-storage.addItem('Дроид');
+storage.addItem("Дроид");
 console.log(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
 
-storage.removeItem('Пролонгер');
+storage.removeItem("Пролонгер");
 console.log(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
 
-storage.removeItem('Железные жупи');
+storage.removeItem("Железные жупи");
 console.log(storage.items);
