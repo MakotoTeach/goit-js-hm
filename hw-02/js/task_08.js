@@ -1,33 +1,47 @@
 "use strict";
 
-const Transaction = {
-  DEPOSIT: "deposit",
-  WITHDRAW: "withdraw"
+/*
+ * Типов транзацкий всего два.
+ * Можно положить либо снять деньги со счета.
+ */
+const Operation = {
+  TAKE: "take",
+  PUT: "put"
 };
+
 let idCounter = 0;
 
 /*
  * Каждая транзакция это объект со свойствами: id, type и amount
  */
-const account = {
-  // Текущий баланс счета
 
+const user = {
+  // Текущий баланс счета
   balance: 0,
+
   // История транзакций
-  transactions: [],
+  operations: [],
+
   /*
    * Метод отвечающий за добавление суммы к балансу
    * Создает объект транзакции и вызывает addTransaction
    */
-   deposit(amount) {
-    const transaction = {
+  take(amount) {
+    const operation = {
       id: idCounter++,
-      type: Transaction.DEPOSIT
+      type: Operation.TAKE,
+      amount: amount
     };
-    transaction.amount = amount;
-    this.addTransaction(transaction);
-    return (this.balance += amount);
+
+    if (amount <= this.balance) {
+      this.addOperation(operation);
+      console.log(`Вы взяли ${amount} средств`);
+      return (this.balance -= amount);
+    } else {
+      console.log("Недостаточно средств на Вашем счету!!!");
+    }
   },
+
   /*
    * Метод отвечающий за снятие суммы с баланса.
    * Создает объект транзакции и вызывает addTransaction
@@ -35,56 +49,70 @@ const account = {
    * Если amount больше чем текущий баланс, выводи сообщение
    * о том, что снятие такой суммы не возможно, недостаточно средств.
    */
-  withdraw(amount) {
-    const transaction = {
+  put(amount) {
+    const operation = {
       id: idCounter++,
-      type: Transaction.WITHDRAW
+      type: Operation.PUT,
+      amount: amount
     };
-    transaction.amount = amount;
-    if (amount <= this.balance) {
-      this.addTransaction(transaction);
-      return (this.balance -= amount);
-    } else {
-      console.log(
-        "Снятие такой суммы не возможно, недостаточно средств на балансе!"
-      );
-    }
+    this.addOperation(operation);
+    console.log(`Вы внесли ${amount} средств`);
+    return (this.balance += amount);
   },
+
   /*
    * Метод добавляющий транзацию в свойство transactions
    * Принимает объект трназкции
    */
-  addTransaction(transaction) {
-    return this.transactions.push(transaction);
+  addOperation(operation) {
+    return this.operations.push(operation);
   },
+
   /*
    * Метод возвращает текущий баланс
    */
   getBalance() {
     return this.balance;
   },
+
   /*
    * Метод ищет и возвращает объект транзации по id
    */
-  getTransactionDetails(id) {
-    for (const singleTransaction of this.transactions) {
-      if (id === singleTransaction.id) {
-        return singleTransaction;
+  getOperationDetails(id) {
+    for (let currentOperation of this.operations) {
+      if (id === currentOperation.id) {
+        return currentOperation;
       }
     }
   },
+
   /*
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
-  getTransactionTotal(type) {
-    let totalFunds = 0;
-    for (const obj of this.transactions) {
-      if (type === obj.type) {
-        totalFunds += obj.amount;
+  getOperationTotal(type) {
+    let totalAmount = 0;
+    for(const obj of this.operations){
+      if( type === obj.type){
+        totalAmount += obj.amount;
       }
     }
-    return totalFunds;
+    return totalAmount;
   }
 };
 
+console.table(user);
+
+user.put(2500);
+
+user.take(900);
+
+console.table(user);
+
+user.put(4500);
+
+console.log(user.operations);
+
+console.log(user.getOperationDetails(2));
+
+console.log(user.getOperationTotal('put'));
