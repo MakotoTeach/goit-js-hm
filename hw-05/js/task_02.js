@@ -8,16 +8,17 @@
 // Добавь метод getInfo(), который, выводит строку:
 // User ${имя} is ${возраст} years old and has ${кол-во фоловеров} followers
 
-const User = function({ name, age, followers }) {
-  this.name = name;
-  this.age = age;
-  this.followers = followers;
-};
-
-User.prototype.getInfo = function() {
-  const message = `User ${name} is ${age} years ond and has ${ this.followers} followers`;
-  console.log(message);
-};
+class User {
+  constructor({ name, age, followers }) {
+    this.name = name;
+    this.age = age;
+    this.followers = followers;
+  }
+  getInfo() {
+    const message = `User ${this.name} is ${this.age} years ond and has ${this.followers} followers`;
+    console.log(message);
+  }
+}
 
 const mango = new User({ name: "Mango", age: 2, followers: 20 });
 mango.getInfo(); // User Mango is 2 years old and has 20 followers

@@ -10,25 +10,24 @@
 // addItem(item) - получает новый товар и добавляет его к текущим
 // removeItem(item) - получет товар и, если он есть, удаляет его из текущих
 
-const Storage = function(items) {
-  this.items = items;
-};
+class Storage {
+  constructor(items) {
+    this.items = items;
+  }
+  getItems() {
+    return this.items;
+  }
+  addItem(item) {
+    return this.items.push(item);
+  }
+  removeItem(item) {
+    const inxToDel = this.items.indexOf(item);
 
-Storage.prototype.getItems = function() {
-  return this.items;
-};
+    console.log(inxToDel);
 
-Storage.prototype.addItem = function(item) {
-  return this.items.push(item);
-};
-
-Storage.prototype.removeItem = function(item) {
-  const inxToDel = this.items.indexOf(item);
-
-  console.log(inxToDel);
-
-  return this.items.splice(inxToDel, 1);
-};
+    return this.items.splice(inxToDel, 1);
+  }
+}
 
 const storage = new Storage([
   "Нанитоиды",
@@ -46,5 +45,5 @@ console.log(storage.items); // [ "Нанитоиды", "Пролонгер", "Ж
 storage.removeItem("Пролонгер");
 console.log(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
 
-storage.removeItem("Железные жупи");
-console.log(storage.items);
+// storage.removeItem("Железные жупи");
+// console.log(storage.items);
