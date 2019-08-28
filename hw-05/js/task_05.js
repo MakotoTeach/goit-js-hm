@@ -37,16 +37,18 @@ class Car {
     return this.speed;
   }
   drive(hours) {
-    if ((this.isOn = true)) {
+    if (this.isOn) {
       this.distance += hours * this.speed;
     }
-    if ((this.isOn = false)) {
+    if (this.isOn) {
       return this.distance;
     }
     return this.distance;
   }
   static getSpecs(car) {
-      return console.log(`maxSpeed: ${car.maxSpeed}`)
+    return console.log(
+      `maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`
+    );
   }
 }
 const mustang = new Car({ maxSpeed: 200, price: 2000 });
@@ -65,23 +67,15 @@ mustang.turnOff();
 
 console.log(mustang);
 
-// // Car.getSpecs(mustang);
-// // // maxSpeed: 200, speed: 0, isOn: false, distance: 120, price: 2000
 mustang.turnOn();
 mustang.accelerate(20);
 mustang.drive(1);
 mustang.turnOff();
 
-console.log(mustang);
-
-// mustang.turnOff()
 mustang.drive(5);
 mustang.turnOn();
 
-console.log(mustang);
-
 Car.getSpecs(mustang);
-
 
 // // Напиши класс Car с указанными свойствами и методами.
 
