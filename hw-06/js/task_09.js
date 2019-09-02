@@ -87,10 +87,8 @@ const users = [
   }
 ];
 
+  const getNamesSortedByFriendsCount = users => users.sort((a,b)=> a.friends.length - b.friends.length)
+  .map(user => user.name);
 
 
-
-const getUsersWithFriend = (users, friendName) => users.filter(users => users.friends.includes(friendName))
-
-
-console.log(getUsersWithFriend(users, 'Briana Decker'));
+console.log(getNamesSortedByFriendsCount(users));
