@@ -87,9 +87,58 @@ const users = [
   }
 ];
 
-const getSortedUniqueSkills = users =>
-  users.reduce((skills, item) => {
-      skills.push(...item.skills);
-    }, []);
+const getSkills = users =>
+  users
+    .reduce((allSkills, user) => {
+      allSkills.push(...user.skills);
 
-console.log(getSortedUniqueSkills(users));
+      return allSkills;
+    }, [])
+    .reduce((totalSkills, skill) => {
+      if (!totalSkills.includes(skill)) {
+        totalSkills.push(skill);
+      }
+      return totalSkills;
+    }, [])
+    .sort();
+
+console.log(getSkills(users));
+
+// console.log(getSkills(users));
+
+// const skills = getSkills(users);
+// let totalSkills = [];
+
+// const getSkillsStat = (acc, skill) => {
+//   if (!acc.includes(skill)) {
+//     totalSkills.push(skill);
+//   }
+//   return totalSkills;
+// };
+
+// // console.log(getSkillsStat);
+
+// const amount = skills => skills.reduce(getSkillsStat, []);
+
+// console.log(amount(skills));
+
+// const getSkills = users.map(user => {
+//   return user.skills;
+// });
+
+// console.log(getSkills);
+
+// let total = [];
+
+// for (let i = 0; i < getSkills.length; i += 1) {
+//   console.log(`i:`, i);
+//   console.log(`getSkills[i]`, getSkills[i]);
+
+//   for (let j = 0; j < getSkills[i].length; j += 1) {
+//     console.log(`getSkills[i][j]`, getSkills[i][j]);
+//     if (!total.includes(getSkills[i][j])) {
+//       total.push(getSkills[i][j]);
+//     }
+//   }
+// }
+// console.log(total);
