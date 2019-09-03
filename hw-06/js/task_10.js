@@ -91,15 +91,9 @@ const getSkills = users =>
   users
     .reduce((allSkills, user) => {
       allSkills.push(...user.skills);
-
       return allSkills;
     }, [])
-    .reduce((totalSkills, skill) => {
-      if (!totalSkills.includes(skill)) {
-        totalSkills.push(skill);
-      }
-      return totalSkills;
-    }, [])
+    .filter((item, i, arr) => arr.indexOf(item) === i)
     .sort();
 
 console.log(getSkills(users));
