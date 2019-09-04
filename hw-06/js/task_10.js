@@ -93,7 +93,9 @@ const getSkills = users =>
       allSkills.push(...user.skills);
       return allSkills;
     }, [])
-    .filter((item, i, arr) => arr.indexOf(item) === i)
+    // .filter((item, i, arr) => arr.indexOf(item) === i)
+
+    .filter((skill => skill!==skill))
     .sort();
 
 console.log(getSkills(users));
