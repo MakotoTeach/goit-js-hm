@@ -1,0 +1,17 @@
+#gallery{
+    width: 900px;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    border: 2px solid rgb(202, 189, 189);
+    box-shadow: 3px 3px  2px 1px rgb(216, 208, 208);
+    padding: 20px;
+}
+
+img {
+    height: 250px;
+    border: 2px solid rgb(218, 209, 209);
+    box-shadow: 1px 1px  1px 1px rgb(216, 208, 208);
+}
