@@ -33,3 +33,11 @@ button {
     font-size: 30px;
     color: rgb(98, 7, 126);
 }
+
+#validation-input.valid {
+  outline: 3px solid #4caf50;
+}
+
+#validation-input.invalid {
+  outline: 3px solid #f44336;
+}
