@@ -1,17 +1,35 @@
-#gallery{
-    width: 900px;
-    height: 600px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    list-style: none;
-    border: 2px solid rgb(202, 189, 189);
-    box-shadow: 3px 3px  2px 1px rgb(216, 208, 208);
-    padding: 20px;
+#gallery {
+  background-color: rgb(34, 33, 30);
+  width: 900px;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  border: 2px solid rgb(202, 189, 189);
+  box-shadow: 3px 3px 2px 1px rgb(216, 208, 208);
+  padding: 20px;
 }
 
 img {
-    height: 250px;
-    border: 2px solid rgb(218, 209, 209);
-    box-shadow: 1px 1px  1px 1px rgb(216, 208, 208);
+  height: 250px;
+  border: 2px solid rgb(218, 209, 209);
+  box-shadow: 1px 1px 1px 1px rgb(216, 208, 208);
+}
+
+button {
+  color: rgb(4, 4, 49);
+  font-size: 26px;
+  background-color: rgb(117, 105, 115);
+  width: 200px;
+  height: 70px;
+  border: 2px solid rgb(27, 25, 26);
+  margin: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+#value{
+    font-size: 30px;
+    color: rgb(98, 7, 126);
 }
