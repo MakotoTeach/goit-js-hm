@@ -1,7 +1,5 @@
 #gallery {
   background-color: rgb(34, 33, 30);
-  width: 900px;
-  height: 600px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -11,6 +9,12 @@
   padding: 20px;
 }
 
+.container{
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3)
+}
+.Task_Number{
+  color: #908d8d;
+}
 img {
   height: 250px;
   border: 2px solid rgb(218, 209, 209);
@@ -40,4 +44,10 @@ button {
 
 #validation-input.invalid {
   outline: 3px solid #f44336;
+}
+
+
+#font-size-slider{
+  margin-top: 50px;
+  display: block;
 }
