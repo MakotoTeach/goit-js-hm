@@ -11,7 +11,7 @@ const checkInput = (event) => {
   let currentValue = event.currentTarget.value;
   if (currentValue.length > 0) {
     output.textContent = event.currentTarget.value;
-  } else output.textContent = "Незнакомец";
+  } else output.textContent = "незнакомец";
 };
 
 input.addEventListener("input", checkInput);

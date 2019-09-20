@@ -9,63 +9,89 @@
   </head>
   <body>
     <!--//////////////////// Task_01 -->
-    <ul id="categories">
-      <li class="item">
-        <h2>Животные</h2>
+    <div class="container">
+      <h2 class="Task_Number">Task_1</h2>
+      <ul id="categories">
+        <li class="item">
+          <h2>Животные</h2>
 
-        <ul>
-          <li>Кот</li>
-          <li>Хомяк</li>
-          <li>Лошадь</li>
-          <li>Попугай</li>
-        </ul>
-      </li>
-      <li class="item">
-        <h2>Продукты</h2>
+          <ul>
+            <li>Кот</li>
+            <li>Хомяк</li>
+            <li>Лошадь</li>
+            <li>Попугай</li>
+          </ul>
+        </li>
+        <li class="item">
+          <h2>Продукты</h2>
 
-        <ul>
-          <li>Хлеб</li>
-          <li>Петрушка</li>
-          <li>Творог</li>
-        </ul>
-      </li>
-      <li class="item">
-        <h2>Технологии</h2>
+          <ul>
+            <li>Хлеб</li>
+            <li>Петрушка</li>
+            <li>Творог</li>
+          </ul>
+        </li>
+        <li class="item">
+          <h2>Технологии</h2>
 
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Node</li>
-        </ul>
-      </li>
-    </ul>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
     <!-- /////////////////////Task_02 -->
-    <ul id="ingredients"></ul>
+    <div class="container">
+      <h2 class="Task_Number">Task_2</h2>
+      <ul id="ingredients"></ul>
+    </div>
     <!-- /////////////////////Task_03 -->
-    <ul id="gallery"></ul>
+    <div class="container">
+      <h2 class="Task_Number">Task_3</h2>
+      <ul id="gallery"></ul>
+    </div>
     <!-- /////////////////////Task_04 -->
-    <div id="counter">
-      <button type="button" data-action="decrement">-1</button>
-      <span id="value">0</span>
-      <button type="button" data-action="increment">+1</button>
+    <div class="container">
+      <h2 class="Task_Number">Task_4</h2>
+      <div id="counter">
+        <button type="button" data-action="decrement">-1</button>
+        <span id="value">0</span>
+        <button type="button" data-action="increment">+1</button>
+      </div>
     </div>
     <!-- /////////////////////Task_05 -->
-    <input type="text" placeholder="Ваше имя?" id="name-input" />
-    <h1>Привет, <span id="name-output">незнакомец</span>!</h1>
+    <div class="container">
+      <h2 class="Task_Number">Task_5</h2>
+      <input type="text" placeholder="Ваше имя?" id="name-input" />
+      <h1>Привет, <span id="name-output">незнакомец</span>!</h1>
+    </div>
     <!-- //////////////////////Task_06 -->
-    <input
-      type="text"
-      id="validation-input"
-      data-length="6"
-      placeholder="Введи 6 символов"
-    />
+    <div class="container">
+      <h2 class="Task_Number">Task_6</h2>
+      <input
+        type="text"
+        id="validation-input"
+        data-length="6"
+        placeholder="Введи 6 символов"
+      />
+    </div>
+    <!-- //////////////////////Task_07 -->
+    <div class="container">
+      <h2 class="Task_Number">Task_7</h2>
+      <input id="font-size-slider" type="range" />
+      <br />
+      <span id="text">Абракадабра!</span>
+    </div>
     <script src="/js/task_01.js" type="module"></script>
     <script src="/js/task_02.js" type="module"></script>
     <script src="/js/task_03.js" type="module"></script>
     <script src="/js/task_04.js" type="module"></script>
     <script src="/js/task_05.js" type="module"></script>
     <script src="/js/Task_06.js" type="module"></script>
+    <script src="/js/Task_07.js" type="module"></script>
   </body>
 </html>
