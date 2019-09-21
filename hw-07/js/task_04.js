@@ -8,11 +8,11 @@ const buttonIncrement = document.querySelector(
   'button[data-action="increment"]'
 );
 
-buttonIncrement.addEventListener("click", increment);
-
 const buttonDecrement = document.querySelector(
   'button[data-action="decrement"]'
 );
+
+buttonIncrement.addEventListener("click", increment);
 
 buttonDecrement.addEventListener("click", decrement);
 
