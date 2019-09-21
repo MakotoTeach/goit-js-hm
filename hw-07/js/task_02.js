@@ -18,4 +18,5 @@ const buildItemsList = ingredients => {
   });
   list.insertAdjacentHTML("afterbegin", template);
 };
+
 buildItemsList(ingredients);

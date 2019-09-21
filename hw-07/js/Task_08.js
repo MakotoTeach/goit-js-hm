@@ -1,11 +1,8 @@
 "use strict";
 
 const input = document.querySelector("#controls > input");
-
 const buttonRender = document.querySelector('button[data-action="render"]');
-
 const buttonDestroy = document.querySelector('button[data-action="destroy"]');
-
 const boxes = document.querySelector("#boxes");
 
 const checkInput = event => {
@@ -21,15 +18,11 @@ const buildList = amount => {
     template += `<div class ="class"></div>`;
   }
   boxes.insertAdjacentHTML("afterbegin", template);
-  
 };
+
 const destroy = () => {
-
-boxes.innerHTML = '';
-}
-
+  boxes.innerHTML = "";
+};
 
 buttonRender.addEventListener("click", checkInput);
-
-buttonDestroy.addEventListener('click', destroy);
-
+buttonDestroy.addEventListener("click", destroy);
