@@ -3,6 +3,9 @@ import imagesArray from "./gallery-items.js";
 ("Use strict");
 
 const gallery = document.querySelector(".gallery");
+const lightBoxImage = document.querySelector(".lightbox___image");
+const lightBox = document.querySelector(".lightbox");
+const LightBoxButton = document.querySelector(".lightbox__button");
 
 const createGalleryItem = ({ preview, original, description }) => {
   const galleryItem = `<li class="gallery__item">
@@ -28,15 +31,22 @@ const createGalleryItem = ({ preview, original, description }) => {
 const createGallery = array => {
   return array.map(item => createGalleryItem(item)).join("");
 };
-console.log(createGallery(imagesArray));
 
-gallery.insertAdjacentHTML('beforeEnd', createGallery(imagesArray))
+gallery.insertAdjacentHTML("beforeEnd", createGallery(imagesArray));
 
-const checkClick = event => {
-    event.preventDefault();
+const showImage = event => {
+  event.preventDefault();
+  let clickedElement = event.target.parentNode;
+  if (clickedElement.tagName != "A") {
+    return;
+  }
+  lightBoxImage.src = clickedElement.href;
+  lightBox.classList.add("is-open");
+};
 
-    console.log('currentTarget', event.currentTarget.tagName)
-    console.log('target', event.target.tagName)
-}
- 
-gallery.addEventListener('click', checkClick)
+const closeLightBox = event => {
+  lightBox.classList.remove("is-open");
+};
+
+gallery.addEventListener("click", showImage);
+LightBoxButton.addEventListener("click", closeLightBox);
