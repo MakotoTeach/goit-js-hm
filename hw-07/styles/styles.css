@@ -10,7 +10,9 @@
 }
 
 .container{
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3)
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  
 }
 .Task_Number{
   color: #908d8d;
