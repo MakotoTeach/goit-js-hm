@@ -29,6 +29,4 @@ const createGalley = array => {
   return array.map(item => createGalleyItem(item)).join("");
 };
 
-console.log(createGalley(images));
-
 galleryList.insertAdjacentHTML("afterbegin", createGalley(images));

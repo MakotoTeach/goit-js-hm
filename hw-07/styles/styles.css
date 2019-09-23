@@ -22,9 +22,9 @@ img {
 }
 
 button {
-  color: rgb(4, 4, 49);
+  color: rgb(230, 188, 62);
   font-size: 26px;
-  background-color: rgb(117, 105, 115);
+  background-color: rgb(34, 33, 30);
   width: 200px;
   height: 70px;
   border: 2px solid rgb(27, 25, 26);
@@ -35,7 +35,8 @@ button {
 
 #value{
     font-size: 30px;
-    color: rgb(98, 7, 126);
+    font-weight: 800;
+    color: rgb(66, 9, 83);
 }
 
 #validation-input.valid {
