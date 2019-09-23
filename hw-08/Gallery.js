@@ -12,13 +12,6 @@ gallery.addEventListener("click", handleImageClick);
 LightBoxButton.addEventListener("click", closeLightBox);
 lightboxContent.addEventListener("click", handleLightBoxClick);
 
-function handleKeyPress(event) {
-  if (event.code !== "Escape") {
-    return;
-  }
-  closeLightBox();
-}
-
 const createGalleryItem = ({ preview, original, description }) => {
   const galleryItem = `<li class="gallery__item">
     <a
@@ -65,6 +58,12 @@ function handleImageClick(event) {
 function handleLightBoxClick(event) {
   const targetTagName = event.target.nodeName;
   if (targetTagName === "IMG") {
+    return;
+  }
+  closeLightBox();
+}
+function handleKeyPress(event) {
+  if (event.code !== "Escape") {
     return;
   }
   closeLightBox();
