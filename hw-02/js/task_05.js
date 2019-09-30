@@ -1,25 +1,20 @@
 "use strict";
 
-//===================Мой код
-// function formatString(string) {
-//   let result = String(string);
+function formatString(string) {
+  let result = String(string);
 
-//   if (result.length >= 40) {
-//     result = result.substring(0, 40) + "...";
-//   }
+  if (result.length >= 40) {
+    result = result.substring(0, 40) + "...";
+  }
 
-//   return result;
-// }
+  return result;
+}
 
-// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-
+console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis."));
 
 
 
-
-
-
-//===============================Ракета
+//===============================Вариант 2
 
 // const formatString = str => {
 
@@ -29,13 +24,7 @@
 //     return str.substring(0, 40 + str.substring(0, 40).split(' ').length-1) + '...';
 // }
 
-
 // console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.')) ;
-
-
-
-
-
 
 // const string = ('Vestibulum facilisis, purus nec pulvinar iaculis.');
 
@@ -53,10 +42,3 @@
 // let total1 = string.substring(0, 40).split(' ');
 
 // console.log(total1);
-
-
-
-
-
-
-

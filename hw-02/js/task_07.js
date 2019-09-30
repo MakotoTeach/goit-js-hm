@@ -25,6 +25,8 @@ do {
   }
 } while (input);
 
+
+
 // do {
 //   input = prompt("Введите число ");
 //   if (input !== null) {
