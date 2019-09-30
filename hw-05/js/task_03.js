@@ -45,5 +45,3 @@ console.log(storage.items); // [ "Нанитоиды", "Пролонгер", "Ж
 storage.removeItem("Пролонгер");
 console.log(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
 
-// storage.removeItem("Железные жупи");
-// console.log(storage.items);
