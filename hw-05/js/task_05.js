@@ -77,6 +77,10 @@ mustang.turnOn();
 
 Car.getSpecs(mustang);
 
+console.log(mustang.price); // 2000
+mustang.price = 4000;
+console.log(mustang.price); // 4000
+
 // // Напиши класс Car с указанными свойствами и методами.
 
 // class Car {
@@ -152,6 +156,6 @@ Car.getSpecs(mustang);
 // // Car.getSpecs(mustang);
 // // // maxSpeed: 200, speed: 0, isOn: false, distance: 120, price: 2000
 
-// // console.log(mustang.price); // 2000
-// // mustang.price = 4000;
-// // console.log(mustang.price); // 4000
+// console.log(mustang.price); // 2000
+// mustang.price = 4000;
+// console.log(mustang.price); // 4000
