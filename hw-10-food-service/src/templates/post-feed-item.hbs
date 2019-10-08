@@ -17,11 +17,7 @@
 
 <li class="menu__item">
   <div class="card">
-    <img
-      src="{{image}}"
-      alt="{{name}}"
-      class="card__image"
-    />
+    <img src="{{image}}" alt="{{name}}" class="card__image" />
     <div class="card__content">
       <h2 class="card__name">{{name}}</h2>
       <p class="card__price">
@@ -36,12 +32,9 @@
       </p>
 
       <ul class="tag-list">
-        <li class="tag-list__item">Картофель</li>
-        <li class="tag-list__item">Чеснок</li>
-        <li class="tag-list__item">Сметана</li>
-        <li class="tag-list__item">Бекон</li>
-        <li class="tag-list__item">Твердый сыр</li>
-        <li class="tag-list__item">Зеленый лук</li>
+        {{#each ingredients}}
+        <li class="tag-list__item">{{this}}</li>
+        {{/each}}
       </ul>
     </div>
 
