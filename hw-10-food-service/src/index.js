@@ -17,6 +17,7 @@ function buildMenu(arr) {
 buildMenu(menu);
 
 const themeLocal = localStorage.getItem('theme');
+
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
@@ -29,11 +30,9 @@ if (themeLocal === Theme.DARK) {
 function themeSwitch(e) {
   if (e.target.checked) {
     changeThemeForDark();
-    console.log(theme);
     return;
   }
   changeThemeForLigth();
-  console.log(theme);
 }
 
 function changeThemeForLigth(e) {
