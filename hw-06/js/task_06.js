@@ -1,6 +1,9 @@
 "use strict";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bac1f732fc021130669ac3404dd3547c3b001a0e
 import users from "./users.js";
 
 const getUsersWithAge = (users, min, max) =>
