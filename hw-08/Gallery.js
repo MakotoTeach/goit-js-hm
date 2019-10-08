@@ -45,14 +45,17 @@ function openLightBox() {
 function closeLightBox() {
   lightBox.classList.remove("is-open");
   window.removeEventListener("keydown", handleKeyPress);
+  lightBoxImage.src = '';
+  lightBoxImage.alt = '';
 }
 function handleImageClick(event) {
   event.preventDefault();
-  const clickedElement = event.target.parentNode;
-  if (clickedElement.tagName != "A") {
+  const clickedElement = event.target;
+  if (clickedElement.parentNode.tagName !== "A") {
     return;
   }
-  lightBoxImage.src = clickedElement.href;
+  lightBoxImage.src = clickedElement.parentNode.href;
+  lightBoxImage.alt = clickedElement.alt; 
   openLightBox();
 }
 function handleLightBoxClick(event) {
