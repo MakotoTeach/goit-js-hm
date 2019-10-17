@@ -40,7 +40,7 @@ const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const startShowColor = () => {
+const startSwitch = () => {
   if (isActive) {
     return;
   }
@@ -52,10 +52,11 @@ const startShowColor = () => {
   }, 1000);
 };
 
-const stopShow = () => {
+const stopSwitch = () => {
   isActive = false;
   clearInterval(randomColor);
+  randomColor = 0;
 };
 
-refs.start.addEventListener("click", startShowColor);
-refs.stop.addEventListener("click", stopShow);
+refs.start.addEventListener("click", startSwitch);
+refs.stop.addEventListener("click", stopSwitch);
