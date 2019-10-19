@@ -17,7 +17,7 @@ const colors = [
   "#2f7b99",
   "#da967d",
   "#34891f",
-  "#b0d87b",
+  "#b0d87b"
 ];
 
 const refs = {
@@ -42,7 +42,7 @@ const switchColor = {
     this.randomColor = setInterval(() => {
       const color = colors[randomIntegerFromInterval(0, colors.length - 1)];
       console.log(color);
-      updateColor(color);
+      this.updateColor(color);
     }, 1000);
   },
 
@@ -50,12 +50,12 @@ const switchColor = {
     this.isActive = false;
     clearInterval(this.randomColor);
     this.randomColor = 0;
+  },
+
+  updateColor(color) {
+    refs.body.style.backgroundColor = color;
   }
 };
-
-function updateColor(color) {
-  refs.body.style.backgroundColor = color;
-}
 
 refs.start.addEventListener("click", switchColor.startSwitch.bind(switchColor));
 refs.stop.addEventListener("click", switchColor.stopSwitch.bind(switchColor));
