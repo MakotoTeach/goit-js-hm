@@ -5,8 +5,9 @@ fetch(base, {
   mode: 'no-cors',
   headers: {
     'Content-Type': 'application/json',
+    // 'Content-Encoding': 'gzip'
   },
-}).then(response => response.json());
+}).then(response => console.log(response));
 // .then(data => console.log(data))
 // .then(weather => {
 //   console.log(weather);
