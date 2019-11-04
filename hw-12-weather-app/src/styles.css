@@ -9,6 +9,7 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     /* text-align: center; */
+    background-color: rgb(224, 224, 224);;
 }
 .country-card {
   width: 70%;

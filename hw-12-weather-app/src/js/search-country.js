@@ -11,10 +11,10 @@ const refs = {
 
 refs.searchInput.addEventListener(
   'input',
-  _.debounce(searchFormSubmitHandler, 500),
+  _.debounce(searchCountryFormHandler, 500),
 );
 
-function searchFormSubmitHandler(e) {
+function searchCountryFormHandler(e) {
   e.preventDefault();
 
   const searchQuery = e.target.value;
@@ -22,7 +22,7 @@ function searchFormSubmitHandler(e) {
   if (searchQuery === '') {
     return;
   } else {
-    countryService.fetchArticles(searchQuery).then(data => {
+    countryService.fetchCountries(searchQuery).then(data => {
       isSearchQueryInRange(data);
     });
   }
@@ -35,6 +35,7 @@ function isSearchQueryInRange(data) {
     return insertMarkUp(countryListMarkup);
   }
   if (data.length === 1) {
+    clearList();
     const countryMarkup = buildCountryMarkup(data);
     return insertMarkUp(countryMarkup);
   }
@@ -43,11 +44,12 @@ function isSearchQueryInRange(data) {
     return PNotify.alert(
       'To many matches found.  Please enter a more specific query!',
     );
-  }
-  else {
+  } else {
     return PNotify.alert('There are no countries with your query!');
+  }
 }
-}
+
+
 function buildCountryMarkup(country) {
   return countryTemaplate(country);
 }
