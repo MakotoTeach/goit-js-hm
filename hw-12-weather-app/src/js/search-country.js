@@ -32,19 +32,22 @@ function isSearchQueryInRange(data) {
   if (2 <= data.length && data.length <= 10) {
     clearList();
     const countryListMarkup = buildCountryList(data);
-    return insertCountryList(countryListMarkup);
+    return insertMarkUp(countryListMarkup);
   }
   if (data.length === 1) {
     const countryMarkup = buildCountryMarkup(data);
-    return insertCountry(countryMarkup);
-  } else {
-    PNotify.alert(
+    return insertMarkUp(countryMarkup);
+  }
+  if (data.length > 10) {
+    clearList();
+    return PNotify.alert(
       'To many matches found.  Please enter a more specific query!',
     );
-    return;
   }
+  else {
+    return PNotify.alert('There are no countries with your query!');
 }
-
+}
 function buildCountryMarkup(country) {
   return countryTemaplate(country);
 }
@@ -53,12 +56,8 @@ function buildCountryList(countries) {
   return countryListTemplate(countries);
 }
 
-function insertCountry(country) {
-  refs.articleList.insertAdjacentHTML('beforeend', country);
-}
-
-function insertCountryList(countries) {
-  refs.articleList.insertAdjacentHTML('beforeend', countries);
+function insertMarkUp(markUp) {
+  refs.articleList.insertAdjacentHTML('beforeend', markUp);
 }
 
 function clearList() {
