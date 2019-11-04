@@ -1,3 +1,4 @@
 import './styles.css';
-import './weather'
+import './js/weather.js';
+
 
