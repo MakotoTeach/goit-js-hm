@@ -26,8 +26,8 @@ text-align: center;
 .country-search_input {
   width: 60%;
   height: 30px;
+  margin: auto;
 }
-
-.search-form {
-  text-align: center;
-}
+.article-list {
+list-style: none;
+};

@@ -1,4 +1,4 @@
 import './styles.css';
-import './js/weather.js';
+import './js/search-country.js';
 
 
