@@ -5,7 +5,7 @@ export default {
   page: 4,
   query: '',
   fetchImages() {
-    const requestParams = `?q=${this.query}&page=${this.page}&per_page=5&image_type=photo&key=`;
+    const requestParams = `?q=${this.query}&page=${this.page}&per_page=20&image_type=photo&key=`;
 
     return fetch(baseUrl + requestParams + key)
       .then(response => response.json())
