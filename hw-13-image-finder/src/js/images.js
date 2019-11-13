@@ -3,7 +3,6 @@ import imagesListItemsTemplates from '../templates/image-list-items.hbs';
 import spinner from '../js/spinner';
 import * as basicLightbox from 'basiclightbox';
 
-
 const refs = {
   searchForm: document.querySelector('#search-form'),
   gallery: document.querySelector('.gallery'),
@@ -49,7 +48,21 @@ function searchFormSubmitHandler(e) {
 function loadMoreBtnHandler() {
   spinner.show();
 
-  fetchImages();
+  imagesService.fetchImages().then(images => {
+    const markup = buildListImagesMarkup(images);
+    insertImageList(markup);
+    spinner.hide();
+
+    scrollToBottom();
+  });
+}
+
+function scrollToBottom() {
+  window.scrollTo({
+    left: 0,
+    top: document.body.scrollHeight,
+    behavior: 'smooth',
+  });
 }
 
 function fetchImages() {
@@ -57,6 +70,7 @@ function fetchImages() {
 
   imagesService
     .fetchImages()
+
     .then(images => {
       const markup = buildListImagesMarkup(images);
       insertImageList(markup);
