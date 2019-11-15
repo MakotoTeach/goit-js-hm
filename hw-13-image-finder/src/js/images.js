@@ -46,21 +46,24 @@ function searchFormSubmitHandler(e) {
 }
 
 function loadMoreBtnHandler() {
+ 
   spinner.show();
 
-  imagesService.fetchImages().then(images => {
-    const markup = buildListImagesMarkup(images);
-    insertImageList(markup);
-    spinner.hide();
-
-    scrollToBottom();
-  });
+  imagesService.fetchImages()
+    .then(images => {
+      const markup = buildListImagesMarkup(images);
+      insertImageList(markup);
+      spinner.hide();
+    })
+    .then(scrollToBottom);
 }
 
 function scrollToBottom() {
+  const element = document.querySelector('.gallery__item');
+
   window.scrollTo({
     left: 0,
-    top: document.body.scrollHeight,
+    top: window.scrollY  + element.clientHeight * 2,
     behavior: 'smooth',
   });
 }
