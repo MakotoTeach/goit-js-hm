@@ -48,14 +48,13 @@ function searchFormSubmitHandler(e) {
 function loadMoreBtnHandler() {
  
   spinner.show();
-
   imagesService.fetchImages()
     .then(images => {
       const markup = buildListImagesMarkup(images);
       insertImageList(markup);
       spinner.hide();
     })
-    .then(scrollToBottom);
+    .then(() => scrollToBottom());
 }
 
 function scrollToBottom() {
@@ -81,7 +80,7 @@ function fetchImages() {
     })
     .catch(error => {
       console.warn(error);
-    });
+    })
 }
 
 function buildListImagesMarkup(items) {
