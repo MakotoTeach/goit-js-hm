@@ -26,6 +26,8 @@ const refs = {
   stop: document.querySelector('button[data-action="stop"]')
 };
 
+
+
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
@@ -41,7 +43,6 @@ const switchColor = {
     this.isActive = true;
     this.randomColor = setInterval(() => {
       const color = colors[randomIntegerFromInterval(0, colors.length - 1)];
-      console.log(color);
       this.updateColor(color);
     }, 1000);
   },
